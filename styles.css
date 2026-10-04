@@ -1,0 +1,71 @@
+:root { --text: #333; --muted: #707070; --link: #35627a; --border: #e7e7e7; --page-width: 940px; }
+html[data-page-width="900"] { --page-width: 900px; }
+* { box-sizing: border-box; }
+html { font-size: 16px; color-scheme: light; }
+body { margin: 0; min-height: 100vh; display: flex; flex-direction: column; color: var(--text); background: white; font-family: Arial, "Microsoft YaHei", "PingFang SC", sans-serif; font-size: 1rem; line-height: 1.6; }
+a { color: var(--link); text-decoration: none; }
+a:hover { text-decoration: underline; }
+:focus-visible { outline: 2px solid var(--link); outline-offset: 3px; }
+.container { width: min(var(--page-width), calc(100% - 64px)); margin-inline: auto; }
+.site-header { background: #f8f8f8; border-bottom: 1px solid var(--border); }
+.header-inner { min-height: 55px; display: flex; align-items: center; gap: 2rem; }
+.site-name { color: #333; font-size: 1.25rem; font-weight: 400; white-space: nowrap; }
+.site-name:hover { text-decoration: none; }
+html[lang="en"] .site-name { font-family: Georgia, serif; letter-spacing: .01em; }
+html[lang="en"][data-name-font="sans"] .site-name { font-family: inherit; letter-spacing: normal; }
+.main-nav { display: flex; align-items: center; gap: 1.4rem; }
+.main-nav a { color: #666; font-size: .9375rem; white-space: nowrap; }
+.main-nav a[aria-current="page"] { color: var(--link); font-weight: 600; }
+.language-switch { margin-left: auto; border: 0; padding: .4rem 0; background: transparent; color: var(--link); font: inherit; font-size: .875rem; cursor: pointer; white-space: nowrap; }
+.language-switch:hover { text-decoration: underline; }
+main { flex: 1; padding-top: 1.5rem; }
+h1 { margin: 0 0 1rem; font-size: 1.375rem; line-height: 1.4; font-weight: 500; }
+h2 { margin: 0 0 .25rem; font-size: 1rem; line-height: 1.6; font-weight: 600; }
+p { margin: 0 0 .8rem; }
+.empty { color: var(--muted); }
+.archive-link { display: inline-block; margin-top: .25rem; font-size: .875rem; }
+body[data-page="updates"] .archive-link { font-size: 1rem; font-weight: 500; color: #29546b; }
+.file-category + .file-category { margin-top: 1.25rem; }
+.file-category p { margin-bottom: 0; }
+.profile-line { margin-bottom: .65rem; }
+.site-footer { padding-top: 1.75rem; padding-bottom: 1.5rem; color: var(--muted); font-size: .875rem; }
+.skip-link { position: absolute; top: -100px; left: 1rem; background: white; padding: .4rem .8rem; z-index: 10; }
+.skip-link:focus { top: .5rem; }
+.update-entry + .update-entry { margin-top: 1.5rem; }
+.update-entry h2 { margin-bottom: .1rem; font-weight: 500; }
+.entry-date { display: block; color: var(--muted); font-size: .875rem; margin-bottom: .5rem; }
+.entry-summary { margin-bottom: .25rem; }
+.read-more { font-size: .875rem; }
+.rich-content { overflow-wrap: anywhere; }
+.rich-content img { display: block; max-width: 100%; height: auto; margin-block: .8rem; }
+.rich-content video { display: block; max-width: 100%; max-height: 500px; margin-block: .8rem; }
+.rich-content audio { display: block; max-width: 100%; margin-block: .8rem; }
+.rich-content pre { overflow-x: auto; background: #f8f8f8; padding: .75rem; font-size: .875rem; }
+.rich-content blockquote { margin: .8rem 0; padding-left: 1rem; border-left: 2px solid var(--border); }
+.rich-content .math-display { display: block; overflow-x: auto; margin-block: .75rem; }
+.file-entry { margin-top: .6rem; }
+.file-entry p { margin: 0; }
+.file-line { display: flex; flex-wrap: wrap; align-items: baseline; gap: .15rem .45rem; }
+.file-title { min-width: 0; overflow-wrap: anywhere; }
+.file-date, .file-meta, .file-download, .file-version-note { font-size: .875rem; }
+.file-date, .file-meta, .file-version-note, .archive-count { color: var(--muted); }
+.archive-count { font-size: .875rem; font-weight: 400; }
+.file-description, .file-history { font-size: .875rem; }
+.file-description { white-space: normal; }
+.file-history { margin-top: .2rem; }
+.file-history summary { cursor: pointer; color: var(--link); }
+.file-history ul { margin-block: .3rem; }
+.archive-month + .archive-month { margin-top: 1rem; }
+.archive-list { margin-top: .25rem; padding-left: 1.25rem; }
+.preview-banner { color: #745c12; background: #fff8df; padding: .4rem .75rem; font-size: .875rem; }
+.design-example-notice { margin-top: .5rem; color: var(--muted); font-size: .875rem; }
+@media (max-width: 700px) {
+  .container { width: calc(100% - 32px); }
+  .header-inner { flex-wrap: wrap; gap: .75rem 1.25rem; padding-block: .7rem; }
+  .main-nav { gap: 1rem; }
+}
+@media print {
+  body { display: block; min-height: 0; }
+  .site-header, .skip-link { display: none; }
+  .container { width: 100%; }
+}
